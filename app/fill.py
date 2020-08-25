@@ -13,6 +13,19 @@ from pdf_template import (  # type:ignore
     SignatureBoundingBox,
 )
 from PIL import Image  # type:ignore
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
+
+retry_strategy = Retry(
+    total=3,
+    status_forcelist=[429, 500, 502, 503, 504],
+    method_whitelist=["HEAD", "GET", "OPTIONS", "PUT"],
+    backoff_factor=1,
+)
+adapter = HTTPAdapter(max_retries=retry_strategy)
+http = requests.Session()
+http.mount("https://", adapter)
+
 
 # Add our bin/ folder to PATH
 os.environ[
@@ -65,7 +78,7 @@ def handler(event: Any, context: Any):
         signature = None
         signature_url = event.get("signature")
         if signature_url:
-            sig_response = requests.get(signature_url)
+            sig_response = http.get(signature_url)
             sig_response.raise_for_status()
             signature = Image.open(BytesIO(sig_response.content))
 
@@ -81,7 +94,7 @@ def handler(event: Any, context: Any):
         )
 
         with template.fill(data, signature) as filled_pdf:
-            res = requests.put(url=output_url, data=filled_pdf)
+            res = http.put(url=output_url, data=filled_pdf)
 
             res.raise_for_status()
 
