@@ -1,5 +1,7 @@
 service: pdf-filler
 
+variablesResolutionMode: 20210326
+
 provider:
   name: aws
   runtime: python3.7
@@ -21,11 +23,13 @@ provider:
   environment:
     # Sentry integration: sends Lambda errors to Sentry. Remove this if you don't want to
     # use Sentry
-    SENTRY_DSN: ${ssm:pdf_filler.common.sentry_dsn~true}
+    SENTRY_DSN: ${ssm:pdf_filler.common.sentry_dsn}
     SENTRY_ENVIRONMENT: ${self:custom.stage}
 
   # Memory allocated to each lambda function
   memorySize: 1024
+
+  lambdaHashingVersion: 20201221
 
 package:
   exclude:
