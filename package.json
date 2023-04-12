@@ -4,7 +4,7 @@
   "repository": "git@github.com:vote/fax_gateway.git",
   "private": true,
   "dependencies": {
-    "serverless": "^1.78.1",
+    "serverless": "^2.72.3",
     "serverless-python-requirements": "^5.1.0"
   },
   "devDependencies": {
