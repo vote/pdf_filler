@@ -4,7 +4,7 @@ variablesResolutionMode: 20210326
 
 provider:
   name: aws
-  runtime: python3.7
+  runtime: python3.10
 
   # The default stage is the "local" stage; CI can deploy other stages (dev and prod)
   stage: local
