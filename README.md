@@ -40,12 +40,21 @@ project: https://gitlab.com/pdftk-java
 This project uses the Serverless framework to deploy an AWS CloudFormation stack. The primary resource in the 
 stack is the Lambda function itself.
 
-To deploy, run: 
+To deploy, first make sure you have packages installed by running the following:
+```bash
+pipenv install
+npm install
+yarn install
+```
+
+Your local version of Pipenv and Node could affect your ability to successfully run the deployment process.
+A combination of Pipenv version 2022.5.2 and Node version 14.21.3 should work.
+
+Make sure your local Docker daemon is running. 
+
+Then, run: 
 ```bash
 sls deploy --stage {stage}
 ```
 
 Possible stages include: local, dev, prod
-
-Your local version of Pipenv and Node could affect your ability to successfully run the deployment process.
-A combination of Pipenv version 2022.5.2 and Node version 14.21.3 should work.
