@@ -47,11 +47,10 @@ npm install
 yarn install
 ```
 
-Make sure your local Docker daemon is running. You may need to run `docker pull lambci/lambda:build-python3.8`
-to install the required Docker image locally.
-
 Your local version of Pipenv and Node could affect your ability to successfully run the deployment process.
 A combination of Pipenv version 2022.5.2 and Node version 14.21.3 should work.
+
+Make sure your local Docker daemon is running. 
 
 Then, run: 
 ```bash
