@@ -43,7 +43,6 @@ stack is the Lambda function itself.
 To deploy, first make sure you have packages installed by running the following:
 ```bash
 pipenv install
-npm install
 yarn install
 ```
 
