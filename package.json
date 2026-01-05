@@ -1,7 +1,7 @@
 {
-  "name": "fax_gateway",
+  "name": "pdf_filler",
   "version": "1.0.0",
-  "repository": "git@github.com:vote/fax_gateway.git",
+  "repository": "git@github.com:vote/pdf_filler.git",
   "private": true,
   "dependencies": {
     "serverless": "^3.38.0",
@@ -9,7 +9,6 @@
   },
   "devDependencies": {
     "husky": "^4.3.8",
-    "serverless-plugin-datadog": "^0.24.0",
     "serverless-prune-plugin": "^1.4.2"
   },
   "scripts": {
