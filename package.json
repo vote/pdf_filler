@@ -4,12 +4,10 @@
   "repository": "git@github.com:vote/pdf_filler.git",
   "private": true,
   "dependencies": {
-    "serverless": "^3.38.0",
-    "serverless-python-requirements": "^6.0.0"
+    "serverless": "^4.32.0"
   },
   "devDependencies": {
-    "husky": "^4.3.8",
-    "serverless-prune-plugin": "^1.4.2"
+    "husky": "^4.3.8"
   },
   "scripts": {
     "sls": "serverless"
