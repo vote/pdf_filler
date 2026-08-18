@@ -15,13 +15,11 @@ boto3 = "*"
 sentry-sdk = "*"
 Pillow = "*"
 requests = "*"
+urllib3 = "*"
 pdf-template = "*"
 
 [requires]
-python_version = "3.10"
-
-[pipenv]
-allow_prereleases = true
+python_version = "3.12"
 
 [scripts]
 autoflake = "autoflake --remove-unused-variables --remove-all-unused-imports --ignore-init-module-imports -i --recursive app"
