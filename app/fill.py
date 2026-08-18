@@ -7,12 +7,12 @@ from io import BytesIO
 from typing import Any, Dict, Optional
 
 import requests
-from pdf_template import (  # type:ignore
+from pdf_template import (  # type: ignore
     PDFTemplate,
     PDFTemplateSection,
     SignatureBoundingBox,
 )
-from PIL import Image  # type:ignore
+from PIL import Image  # type: ignore
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
@@ -28,9 +28,9 @@ http.mount("https://", adapter)
 
 
 # Add our bin/ folder to PATH
-os.environ[
-    "PATH"
-] = f"{os.environ.get('PATH', '')}:{os.path.join(os.path.dirname(__file__))}/../bin/"
+os.environ["PATH"] = (
+    f"{os.environ.get('PATH', '')}:{os.path.join(os.path.dirname(__file__))}/../bin/"
+)
 
 
 def random_name(length=32) -> str:
@@ -38,7 +38,7 @@ def random_name(length=32) -> str:
 
 
 def load_signature_locations(
-    locations_json: Optional[Dict[str, Any]]
+    locations_json: Optional[Dict[str, Any]],
 ) -> Optional[Dict[int, SignatureBoundingBox]]:
     if not locations_json:
         return None
