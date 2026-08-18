@@ -14,7 +14,7 @@ from pdf_template import (  # type: ignore
 )
 from PIL import Image  # type: ignore
 from requests.adapters import HTTPAdapter
-from requests.packages.urllib3.util.retry import Retry
+from urllib3.util.retry import Retry
 
 retry_strategy = Retry(
     total=3,

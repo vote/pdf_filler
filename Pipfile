@@ -15,6 +15,7 @@ boto3 = "*"
 sentry-sdk = "*"
 Pillow = "*"
 requests = "*"
+urllib3 = "*"
 pdf-template = "*"
 
 [requires]
